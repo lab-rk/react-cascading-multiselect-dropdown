@@ -15,7 +15,58 @@ npm i react-multiselect-cascading-dropdowns   # npm
 yarn add react-multiselect-cascading-dropdowns # yarn
 ```
 
-# react-multi-select-component
+- Sample Usage example
+
+```tsx
+const Example = () => {
+  
+  const ref = React.createRef();
+  
+  const data_labels=['Fruit/Veg', 'Name', 'Color']
+  const data=[
+  ["fruit","apple","red"],
+  ["fruit","grape","purple"],
+  ["fruit","banana","yellow"],
+  ["veg","broccoli","green"],
+  ["veg","pumpkin","orange"],
+  ["veg","chilli","red"],
+  ]
+  useEffect(() => {}, []);
+
+  function onChangeData(e) {
+    console.log(e);
+  }
+
+  function onClick() {
+    ref.current.clearFilters();
+  }
+
+  return (
+    <div>
+      <button onClick={onClick}>Clear All Filters</button>
+      <MultiselectCascadeFilter
+        ref={ref}
+        data={data}
+        n_items={3}
+        onChange={onChangeData}
+        showInactiveItems={true}
+        preserveInactiveSelections={false}
+        showLabel={true}
+        padding={'10px'}
+        margin={'20px'}
+        labels={data_labels}       
+        singleSelect={[true, false, false, false, false]}
+        hasSelectAll={[false, true, true, true, true]}
+        shouldToggleOnHover={[false, false, false, false, false]}
+        debounceDuration={10}
+        closeOnChangedValue={[false, false, false, false, false]}
+      />
+    </div>
+  );
+};
+
+export default Example;
+```
 
 ## 📝 Changelog
 
