@@ -1,5 +1,5 @@
 
-# react-multiselect-cascading-dropdowns
+# react-multi-select-cascading-dropdowns
 
 A package to create multiple cascading dropdown filters for dashboard style bi-directional dependent filter implementations
 Based on react-multi-select-component
@@ -11,8 +11,8 @@ Based on react-multi-select-component
 ## 🔧 Installation
 
 ```bash
-npm i react-multiselect-cascading-dropdowns   # npm
-yarn add react-multiselect-cascading-dropdowns # yarn
+npm i react-multi-select-cascading-dropdowns   # npm
+yarn add react-multi-select-cascading-dropdowns # yarn
 ```
 
 - Sample Usage example
@@ -79,4 +79,4 @@ For every release changelog/migration-guide will be available in [releases](http
 
 ## 📜 License
 
-MIT &copy; [Rahul K](https://github.com/rahulkravi)
+MIT &copy; [Rahul K](https://github.com/lab-rk)
