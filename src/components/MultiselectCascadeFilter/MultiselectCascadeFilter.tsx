@@ -48,8 +48,7 @@ export interface DataArrayType {
 
 export interface handleFunction {
   clearFilters(): void;
-  selectAllFitlers():void;
-
+  selectAllFilters():void;
 }
 
 
@@ -76,8 +75,8 @@ const MultiselectCascadeFilter = React.forwardRef<
       setFilterSelect(initializeFilterSelect(range));
       filterWithoutDisable(props.data, initializeFilterSelect(range), -1);
     },
-    selectAllFitlers: () => {
-      selectAllFitlers(props.data)
+    selectAllFilters: () => {
+		selectAllFilters_func(props.data)
     },
   }));
 
@@ -243,7 +242,7 @@ const MultiselectCascadeFilter = React.forwardRef<
     }
   }
 
-  function selectAllFitlers(data: string[][]){
+  function selectAllFilters_func(data: string[][]){
     let fil_data = {} as DataArrayType;
    
     range

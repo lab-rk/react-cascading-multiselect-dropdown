@@ -42,7 +42,7 @@ const Example = () => {
   }
 
   function onClickSelect() {
-    ref.current.selectAllFitlers();
+    ref.current.selectAllFilters();
   }
 
   return (
