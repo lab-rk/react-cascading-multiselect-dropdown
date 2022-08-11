@@ -1,1 +1,1 @@
-export { default as MultiselectCascadeFilter, DataArrayType} from "./MultiselectCascadeFilter";
+export { default as MultiselectCascadeFilter, DataArrayType, handleFunction} from "./MultiselectCascadeFilter";
