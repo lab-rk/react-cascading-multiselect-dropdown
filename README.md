@@ -41,9 +41,14 @@ const Example = () => {
     ref.current.clearFilters();
   }
 
+  function onClickSelect() {
+    ref.current.selectAllFitlers();
+  }
+
   return (
     <div>
       <button onClick={onClick}>Clear All Filters</button>
+      <button onClick={onClickSelect}>Select All Filters</button>
       <MultiselectCascadeFilter
         ref={ref}
         data={data}
