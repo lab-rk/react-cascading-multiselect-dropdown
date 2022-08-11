@@ -139,9 +139,7 @@ const MultiselectCascadeFilter = React.forwardRef<
               temp = temp.filter((y) =>
                 selects[p].map((x) => x.value).includes(y[p])
               );
-            } else {
-              temp = temp;
-            }
+            } 
           });
         fil_data[x] = [...new Set(temp.map((item) => item[x]))].map((j) => ({
           value: j,
@@ -189,9 +187,7 @@ const MultiselectCascadeFilter = React.forwardRef<
               temp = temp.filter((y) =>
                 selects[p].map((x) => x.value).includes(y[p])
               );
-            } else {
-              temp = temp;
-            }
+            } 
           });
         let active_set = [...new Set(temp.map((item) => item[x]))];
         fil_data[x] = temp_orig
