@@ -56,7 +56,7 @@ const MultiselectCascadeFilter = React.forwardRef<
   handleFunction,
   MultiselectCascadeFilterProps
 >((props, ref) => {
-  function initializeFilterSelect(howMany: number[]) {
+  function _initialzeStates(howMany: number[]) {
     let t = {} as DataArrayType;
     howMany.map((x) => (t[x] = []));
     return t;
@@ -64,16 +64,16 @@ const MultiselectCascadeFilter = React.forwardRef<
 
   const range = Array.from(Array(props.n_items).keys());
   const [selectedFilt, setFilterSelect] = useState<DataArrayType>(
-    initializeFilterSelect(range)
+    _initialzeStates(range)
   );
   const [filtered, setFiltered] = useState<DataArrayType>(
-    initializeFilterSelect(range)
+    _initialzeStates(range)
   );
 
   React.useImperativeHandle(ref, () => ({
     clearFilters: () => {
-      setFilterSelect(initializeFilterSelect(range));
-      filterWithoutDisable(props.data, initializeFilterSelect(range), -1);
+      setFilterSelect(_initialzeStates(range));
+      _filterWithoutDisable(props.data, _initialzeStates(range), -1);
     },
     selectAllFilters: () => {
 		selectAllFilters_func(props.data)
@@ -116,7 +116,7 @@ const MultiselectCascadeFilter = React.forwardRef<
     </div>
   );
 
-  function filterWithoutDisable(
+  function _filterWithoutDisable(
     data: string[][],
     selects: DataArrayType,
     h: number
@@ -163,7 +163,7 @@ const MultiselectCascadeFilter = React.forwardRef<
     props.onChange && props.onChange(selects);
   }
 
-  function filterWithDisable(
+  function _filterWithDisable(
     data: string[][],
     selects: DataArrayType,
     h: number
@@ -232,9 +232,9 @@ const MultiselectCascadeFilter = React.forwardRef<
     }
 
     if (props.showInactiveItems == true) {
-      filterWithDisable(props.data, { ...selectedFilt, [h]: e }, h);
+      _filterWithDisable(props.data, { ...selectedFilt, [h]: e }, h);
     } else {
-      filterWithoutDisable(props.data, { ...selectedFilt, [h]: e }, h);
+      _filterWithoutDisable(props.data, { ...selectedFilt, [h]: e }, h);
     }
   }
 
@@ -255,7 +255,7 @@ const MultiselectCascadeFilter = React.forwardRef<
   }
 
   useEffect(() => {
-    filterWithoutDisable(props.data, initializeFilterSelect(range), -1);
+    _filterWithoutDisable(props.data, _initialzeStates(range), -1);
   }, []);
 
   return (

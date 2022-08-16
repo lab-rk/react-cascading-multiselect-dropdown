@@ -1,6 +1,6 @@
 {
   "name": "react-multi-select-cascading-dropdowns",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "A package to create multiple cascading dropdown filters for dashboard style bi-directional dependent filter implementations",
   "scripts": {
     "rollup": "rollup -c",
