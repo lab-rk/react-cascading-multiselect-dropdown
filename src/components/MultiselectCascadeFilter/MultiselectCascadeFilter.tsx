@@ -243,12 +243,19 @@ const MultiselectCascadeFilter = React.forwardRef<
    
     range
       .map((x) => {
-        fil_data[x] = [...new Set(data.map((item) => item[x]))].map((j) => ({
-          value: j,
-          label: j,
-        }));        
+        if(props.singleSelect && props.singleSelect[x]){
+          fil_data[x] = [{
+            value: data[0][x],
+            label: data[0][x],
+          }]; 
+        }else{
+          fil_data[x] = [...new Set(data.map((item) => item[x]))].map((j) => ({
+            value: j,
+            label: j,
+          })); 
+        }       
       });
-  
+      
     setFiltered(fil_data);
     setFilterSelect(fil_data);
     props.onChange && props.onChange(fil_data);
